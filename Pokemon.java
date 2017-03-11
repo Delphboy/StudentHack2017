@@ -27,5 +27,24 @@ public class Pokemon
   	return health;
   } // getHealth
 
+  public void setHealth(int newHealth)
+  {
+    health = newHealth;
+  } // setHealth
+
+  public String attackPokemon(Pokemon other)
+  {
+    int newOtherHealth = other.getHealth() - ability.getDamage();
+    other.setHealth(newOtherHealth);
+    // Battle Message
+    return this.pokemonName + " used " + ability.getAttackName() + " on " + other.getPokemonName() + "!"
+                            + other.getPokemonName() + " has " + other.getHealth() + " health left!";
+  }
+
+  public String toString()
+  {
+  	return pokemonName + " " + ability.getAttackName() + " " + health;
+  } // toString
+
 
 } // Pokemon
