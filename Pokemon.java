@@ -34,12 +34,23 @@ public class Pokemon
 
   public String attackPokemon(Pokemon other)
   {
+    // Damage dealt to other pokemon
     int newOtherHealth = other.getHealth() - ability.getDamage();
+    if (newOtherHealth < 0)
+      newOtherHealth = 0;
     other.setHealth(newOtherHealth);
     // Battle Message
-    return this.pokemonName + " used " + ability.getAttackName() + " on " + other.getPokemonName() + "!"
+    return this.pokemonName + " used " + ability.getAttackName() + " on " + other.getPokemonName() + "! "
                             + other.getPokemonName() + " has " + other.getHealth() + " health left!";
-  }
+  } // attackPokemon
+
+  public boolean isDead()
+  {
+    if (health <= 0)
+      return true;
+
+    return false;
+  } // isDead
 
   public String toString()
   {
