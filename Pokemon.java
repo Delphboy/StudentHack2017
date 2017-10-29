@@ -56,6 +56,4 @@ public class Pokemon
   {
   	return pokemonName + " " + ability.getAttackName() + " " + health;
   } // toString
-
-
 } // Pokemon
